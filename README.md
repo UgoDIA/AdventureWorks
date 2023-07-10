@@ -2,7 +2,8 @@
 
 ## Rôles des bases de données
 
-- La base de données **AdventureWorks2019** sert à...
+- La base de données **AdventureWorks2019** sert aux opérations qutodiennes
+- La base de données **AdventureWorksDW2019** sert pour l'analyse approfondie des données.
 
 ## Qu'est-ce que l'ETL ?
 
@@ -49,9 +50,9 @@ Les systèmes OLTP sont conçus pour répondre aux exigences de performances él
 
 ## Qu'est-ce qu'un Data warehouse et un Datalake ?
 
-![Data warehouse](./backup/data-lake-data-warehouse.png)
+![Data warehouse et Datalake](./backup/data-lake-data-warehouse.png)
 
-Pour le Data **warehouse**:
+Pour le **Data warehouse**:
 
 - Il permet de rassembler des données provenant de différentes sources pour obtenir une vue unifiée.
 - Il offre des performances élevées lors de l'analyse des données.
@@ -61,9 +62,30 @@ Pour le Data **warehouse**:
 
 ---
 
-Pour le Data **lake**:
+Pour le **Datalake**:
 
 - Le datalake est un système de stockage qui centralise et stocke de grandes quantités de données brutes, structurées et non structurées.
 - Il offre une grande flexibilité pour stocker et analyser des données de diverses sources.
 - Il est adapté aux Big Data et permet d'explorer les données sans transformation préalable.
 - Il offre des fonctionnalités de sécurité et de contrôle d'accès pour protéger les données.
+
+---
+
+## Qu'est-ce qu'un Datamart ?
+
+![Datamart](./backup/datalake_vs_datawarehouse.png)
+
+Le **Datamart** est une version simplifiée et spécialisée d'un data warehouse.
+
+- Il se concentre sur une domaine ou une fonction spécifique de l'organisation et contient les données pertinentes à ce domaine.
+- Les datamarts offrent une vue cohérente des données pour les utilisateurs et sont optimisés pour les performances et l'analyse.
+
+En résumé, un datamart est une version ciblée d'un data warehouse, adaptée aux besoins spécifiques d'un groupe d'utilisateurs.
+
+---
+
+## Qu'est-ce qu'un Datamesh ?
+
+![Datamesh](./backup/capture_Datamesh.png)
+
+Un **DataMesh** est une approche décentralisée de gestion des données où chaque équipe est responsable de ses propres données. Les données sont partagées de manière sécurisée et interopérable entre les équipes. Cela favorise la collaboration et permet une prise de décision basée sur les données dans un environnement complexe.
