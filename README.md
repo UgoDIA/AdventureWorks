@@ -2,7 +2,7 @@
 
 ## Rôles des bases de données
 
-- La base de données **AdventureWorks2019** sert aux opérations qutodiennes
+- La base de données **AdventureWorks2019** sert aux opérations quotidiennes
 - La base de données **AdventureWorksDW2019** sert pour l'analyse approfondie des données.
 
 ## Qu'est-ce que l'ETL ?
