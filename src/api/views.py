@@ -19,7 +19,8 @@ def dept(request):
     cursor.execute('''SELECT d.DepartmentGroupName, COUNT(f.FinanceKey) AS NumberOfPeople
                         FROM [AdventureWorksDW2019].[dbo].[DimDepartmentGroup] d
                         LEFT JOIN [AdventureWorksDW2019].[dbo].[FactFinance] f ON f.DepartmentGroupKey = d.DepartmentGroupKey
-                        GROUP BY d.DepartmentGroupName;''')
+                        GROUP BY d.DepartmentGroupName
+                        order by COUNT(f.FinanceKey) asc ;''')
     result=cursor.fetchall()
     return Response(result)
 
