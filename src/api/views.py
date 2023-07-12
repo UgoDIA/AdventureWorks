@@ -22,3 +22,20 @@ def dept(request):
                         GROUP BY d.DepartmentGroupName;''')
     result=cursor.fetchall()
     return Response(result)
+
+@api_view(['GET'])
+def deptFinance(request):
+    cursor=connection.cursor()
+    cursor.execute('''SELECT
+                        DDG.DepartmentGroupName,
+                        SUM(FF.Amount) AS TotalAmount
+                        FROM
+                        AdventureWorksDW2019.dbo.FactFinance AS FF
+                        JOIN
+                        AdventureWorksDW2019.dbo.DimDepartmentGroup AS DDG
+                        ON
+                        FF.DepartmentGroupKey = DDG.DepartmentGroupKey
+                        GROUP BY
+                        DDG.DepartmentGroupName;''')
+    result=cursor.fetchall()
+    return Response(result)
