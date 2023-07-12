@@ -20,7 +20,7 @@ def dept(request):
                         FROM [AdventureWorksDW2019].[dbo].[DimDepartmentGroup] d
                         LEFT JOIN [AdventureWorksDW2019].[dbo].[FactFinance] f ON f.DepartmentGroupKey = d.DepartmentGroupKey
                         GROUP BY d.DepartmentGroupName
-                        order by COUNT(f.FinanceKey) asc ;''')
+                        order by COUNT(f.FinanceKey) desc ;''')
     result=cursor.fetchall()
     return Response(result)
 
@@ -38,7 +38,7 @@ def deptFinance(request):
                         FF.DepartmentGroupKey = DDG.DepartmentGroupKey
                         GROUP BY
                         DDG.DepartmentGroupName
-                        ORDER BY SUM(FF.Amount) asc;''')
+                        ORDER BY SUM(FF.Amount) desc;''')
     result=cursor.fetchall()
     return Response(result)
 

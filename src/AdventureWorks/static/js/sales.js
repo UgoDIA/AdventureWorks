@@ -24,12 +24,34 @@ $(document).ready(function () {
                     }]
                 },
                 options: {
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+
+                    },
                     scales: {
                         y: {
+                            grid:{
+                                display:false,
+                            },
                             beginAtZero: true,
                             type: 'logarithmic',
-                        }
-                    }
+                            ticks: {
+                                color: 'white',
+                            },
+                        },
+                        x: {
+                            grid: {
+                                display: false,
+                            },
+                            beginAtZero: true,
+                            ticks: {
+                                color: 'white',
+                            },
+                        },
+
+                    },
                 }
             });
         },
