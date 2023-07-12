@@ -21,7 +21,7 @@ $(document).ready(function () {
       const ctx = document.getElementById("departmentChart");
 
       new Chart(ctx, {
-        type: "bar",
+        type: "doughnut",
         data: {
           labels: labels,
           datasets: [
@@ -32,13 +32,7 @@ $(document).ready(function () {
             },
           ],
         },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
+        options: {},
       });
     })
     .catch((error) => {
