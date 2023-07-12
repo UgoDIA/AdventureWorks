@@ -48,6 +48,6 @@ def sales(request):
     cursor.execute('''SELECT YEAR(OrderDate) AS Year, SUM(SalesAmount) AS TotalSales
                         FROM [AdventureWorksDW2019].[dbo].[FactInternetSales]
                         GROUP BY YEAR(OrderDate)
-                        ORDER BY YEAR(OrderDate);''')
+                        ORDER BY YEAR(OrderDate) ASC;''')
     result=cursor.fetchall()
     return Response(result)
