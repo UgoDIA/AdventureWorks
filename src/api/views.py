@@ -41,3 +41,13 @@ def deptFinance(request):
                         ORDER BY SUM(FF.Amount) asc;''')
     result=cursor.fetchall()
     return Response(result)
+
+@api_view(['GET'])
+def sales(request):
+    cursor=connection.cursor()
+    cursor.execute('''SELECT YEAR(OrderDate) AS Year, SUM(SalesAmount) AS TotalSales
+                        FROM [AdventureWorksDW2019].[dbo].[FactInternetSales]
+                        GROUP BY YEAR(OrderDate)
+                        ORDER BY YEAR(OrderDate);''')
+    result=cursor.fetchall()
+    return Response(result)

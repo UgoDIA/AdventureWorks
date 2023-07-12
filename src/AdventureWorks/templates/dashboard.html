@@ -25,101 +25,112 @@
 
       <!-- Preloader -->
       <div class="preloader flex-column justify-content-center align-items-center">
-         <img class="animation__wobble bg-white" src="{% static "images/test.png"  %}" alt="AdminLTELogo" height="200" width="600">
+         <img class="animation__wobble bg-white rounded" src="{% static "images/test.png"  %}" alt="AdminLTELogo" height="200" width="600">
       </div>
-      <section class="content">
-         <div class="container">
-            <div class= "row justify-content-md-around">
-               <div class="col-auto align-self-center bg-white"><img src="{% static "images/test.png"  %}" alt="Logo Adv"  style="height: 60px;"></div>
-               <div class="col-auto align-self-center">
-                  <h1 class="display-3 mt-4 mb-4" >Adventure Works</h1>
-               </div>
-               <div class="col-auto align-self-center">
-                  <h1 class="display-3 mt-4 mb-4" ><a  href="https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms"  target="_blank" ><button type="button"class="btn btn-dark info-btn"><i class="fas fa-info"></i></button></a></h1>
-               </div>
-            </div>
-
-            
-            <!-- Chiffres d'affaires par années -->
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-title">Chiffres d'affaires par années</h5>
-                        <div class="card-tools">
-                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                           <i class="fas fa-minus"></i>
-                           </button>
-                        </div>
-                     </div>
-                     <div class="card-body">
-                        <div class="row">
-                             <!-- graph ici -->
-                            <div>
-                                <canvas id="myChart"></canvas>
-                            </div>         
-                                            
-
-                        </div>
-                        
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Financement par département -->
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-title">Financement par département</h5>
-                        <div class="card-tools">
-                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                           <i class="fas fa-minus"></i>
-                           </button>
-                        </div>
-                     </div>
-                     <div class="card-body">
-                        <div class="row justify-content-center">
-                             <!-- graph ici -->
-                           <div class="col-md-6">
-                           <canvas id="deptfin" width="800" ></canvas>
-                           </div>
-
-
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-            <!-- Nombre d'employés par département -->
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-title">Nombre d'employés par département</h5>
-                        <div class="card-tools">
-                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                           <i class="fas fa-minus"></i>
-                           </button>
-                        </div>
-                     </div>
-                     <div class="card-body">
-                        <div class="row">
-                             <!-- graph ici -->
-                           <div>
-                                <canvas id="departmentChart"></canvas>
-                            </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-
+<section class="content">
+   <div class="container">
+      <div class="row justify-content-md-around">
+         <div class="col-auto align-self-center bg-white rounded"><img src="{% static "images/test.png"  %}" alt="Logo Adv"  style="height: 60px;"></div>
+         <div class="col-auto align-self-center">
+            <h1 class="display-3 mt-4 mb-4">Adventure Works</h1>
          </div>
-      </section>
+         <div class="col-auto align-self-center">
+            <h1 class="display-3 mt-4 mb-4"><a href="https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms" target="_blank"><button type="button" class="btn btn-dark info-btn"><i class="fas fa-info"></i></button></a></h1>
+         </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Chiffres d'affaires par années -->
+         <div class="col-md-6">
+            <div class="card">
+               <div class="card-header">
+                  <h5 class="card-title">Chiffres d'affaires par années</h5>
+                  <div class="card-tools">
+                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                     <i class="fas fa-minus"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="row justify-content-center">
+                     <div class="col-md-12">
+                        <canvas id="myChart"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Financement par département -->
+         <div class="col-md-6">
+            <div class="card">
+               <div class="card-header">
+                  <h5 class="card-title">Financement par département</h5>
+                  <div class="card-tools">
+                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                     <i class="fas fa-minus"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="row justify-content-center">
+                     <div class="col-md-12">
+                        <canvas id="deptfin" width="800"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- FNombre d'employés par département -->
+      <div class="row">
+         <div class="col-md-6">
+            <div class="card">
+               <div class="card-header">
+                  <h5 class="card-title">Nombre d'employés par département</h5>
+                  <div class="card-tools">
+                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                     <i class="fas fa-minus"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <canvas id="departmentChart"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+        <!-- nouvelle carte -->
+         <div class="col-md-6">
+            <div class="card">
+               <div class="card-header">
+                  <h5 class="card-title">test</h5>
+                  <div class="card-tools">
+                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                     <i class="fas fa-minus"></i>
+                     </button>
+                  </div>
+               </div>
+               <div class="card-body">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <canvas id="departmentChart"></canvas>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+</section>
+
 
       <script src="{%static "js/main.js" %}"></script>
       <script src="{%static "js/dept.js" %}"></script>
