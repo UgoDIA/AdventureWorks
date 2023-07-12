@@ -1,11 +1,10 @@
 $(document).ready(function () {
 
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.origin;
 
     // Effectuer une requête à l'API pour obtenir les données
-    // Assurez-vous de remplacer 'URL_DE_L_API' par l'URL réelle de votre API
     $.ajax({
-        url: 'http://127.0.0.1:8000/AdventureWorks/api/deptFinance/',
+        url: currentUrl+'/AdventureWorks/api/deptFinance/',
         method: 'GET',
         success: function (response) {
             // Récupérer les valeurs du dataset depuis la réponse de l'API
@@ -25,7 +24,15 @@ $(document).ready(function () {
                     }]
                 },
                 options: {
-                    
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: 'white'
+                            }
+                        },
+
+                    },
                 }
             });
         },

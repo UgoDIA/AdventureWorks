@@ -1,13 +1,11 @@
 $(document).ready(function () {
 
     const currentUrl = window.location.origin;
-    console.log(currentUrl)
 
     $.ajax({
-        url:  currentUrl+'/AdventureWorks/api/sales/',
+        url: currentUrl + '/AdventureWorks/api/sales/',
         method: 'GET',
         success: function (response) {
-            // Récupérer les valeurs du dataset depuis la réponse de l'API
             const datasetData = response;
             const labels = datasetData.map(item => item[0])
             const data = datasetData.map(item => item[1]);
@@ -32,8 +30,8 @@ $(document).ready(function () {
                     },
                     scales: {
                         y: {
-                            grid:{
-                                display:false,
+                            grid: {
+                                display: false,
                             },
                             beginAtZero: true,
                             type: 'logarithmic',

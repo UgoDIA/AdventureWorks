@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  const currentUrl = window.location.href;
-  const url = "http://127.0.0.1:8000/AdventureWorks/api/dept/";
+  const currentUrl = window.location.origin;
+  const url = currentUrl+ "/AdventureWorks/api/dept/";
 
   fetch(url)
     .then((response) => {
@@ -11,7 +11,6 @@ $(document).ready(function () {
       }
     })
     .then((data) => {
-      console.log(data); // Afficher les données JSON récupérées
 
       // Extraction des données pour le graphique
       const labels = data.map((department) => department[0]);
@@ -32,7 +31,17 @@ $(document).ready(function () {
             },
           ],
         },
-        options: {},
+        options: {
+          plugins: {
+            legend: {
+              display: true,
+              labels:{
+                color:'white'
+              }
+            },
+
+          },
+        },
       });
     })
     .catch((error) => {
