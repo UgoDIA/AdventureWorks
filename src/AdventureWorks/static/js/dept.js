@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const currentUrl = window.location.origin;
-  const url = currentUrl+ "/AdventureWorks/api/dept/";
+  const url = currentUrl + "/AdventureWorks/api/dept/";
 
   fetch(url)
     .then((response) => {
@@ -11,7 +11,6 @@ $(document).ready(function () {
       }
     })
     .then((data) => {
-
       // Extraction des données pour le graphique
       const labels = data.map((department) => department[0]);
       const values = data.map((department) => department[1]);
@@ -32,14 +31,29 @@ $(document).ready(function () {
           ],
         },
         options: {
+          animation: {
+            onComplete: () => {
+              delayed = true;
+            },
+            delay: (context) => {
+              let delay = 0;
+              if (
+                context.type === "data" &&
+                context.mode === "default" &&
+                !delay
+              ) {
+                delay = context.dataIndex * 300 + context.datasetIndex * 100;
+              }
+              return delay;
+            },
+          },
           plugins: {
             legend: {
               display: true,
-              labels:{
-                color:'white'
-              }
+              labels: {
+                color: "white",
+              },
             },
-
           },
         },
       });
