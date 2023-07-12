@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'AdventureWorks',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -75,10 +78,21 @@ WSGI_APPLICATION = 'AdventureWorks.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'mssql',
+        'NAME': 'AdventureWorksDW2019',
+        'USER': 'sa',
+        'PASSWORD': 'Adventureworks1',
+        'HOST': '20.19.202.243',
+        'PORT': '1433',
+
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
 }
+
+# set this to False if you want to turn off pyodbc's connection pooling
+DATABASE_CONNECTION_POOLING = False
 
 
 # Password validation
