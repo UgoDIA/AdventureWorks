@@ -15,7 +15,7 @@ $(document).ready(function () {
 
             const ctx = document.getElementById('deptfin');
             new Chart(ctx, {
-                type: 'bar',
+                type: 'pie',
                 data: {
                     labels: labels,
                     datasets: [{
@@ -25,11 +25,7 @@ $(document).ready(function () {
                     }]
                 },
                 options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
+                    
                 }
             });
         },
