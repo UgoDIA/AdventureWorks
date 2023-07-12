@@ -1,3 +1,9 @@
+// Sélectionnez l'élément de chargement
+var loader = document.querySelector(".loader");
+
+// Affichez l'élément de chargement
+loader.style.display = "block";
+
 $(document).ready(function () {
   const currentUrl = window.location.origin;
   const url = currentUrl + "/AdventureWorks/api/dept/";
@@ -57,6 +63,9 @@ $(document).ready(function () {
           },
         },
       });
+
+      // Masquez l'élément de chargement une fois les données récupérées
+      loader.style.display = "none";
     })
     .catch((error) => {
       console.error("Erreur récupération des départements :", error);
