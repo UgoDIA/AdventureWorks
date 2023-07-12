@@ -51,3 +51,21 @@ def sales(request):
                         ORDER BY YEAR(OrderDate) ASC;''')
     result=cursor.fetchall()
     return Response(result)
+
+@api_view(['GET'])
+def country(request):
+    cursor=connection.cursor()
+    cursor.execute('''SELECT
+                        DG.FrenchCountryRegionName,
+                        SUM(DC.CustomerKey) AS TotalAmount
+                        FROM
+                        AdventureWorksDW2019.dbo.DimCustomer AS DC
+                        JOIN
+                        AdventureWorksDW2019.dbo.DimGeography AS DG
+                        ON
+                        DC.GeographyKey = DG.GeographyKey
+                        GROUP BY
+                        DG.FrenchCountryRegionName
+                        order by SUM(DC.CustomerKey) asc ;''')
+    result=cursor.fetchall()
+    return Response(result)
