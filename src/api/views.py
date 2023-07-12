@@ -69,3 +69,24 @@ def country(request):
                         order by SUM(DC.CustomerKey) asc ;''')
     result=cursor.fetchall()
     return Response(result)
+
+@api_view(['GET'])
+def CACountry(request):
+    cursor=connection.cursor()
+    cursor.execute('''SELECT DG.FrenchCountryRegionName,
+                        SUM(FIS.SalesAmount) AS TotalAmount
+                        FROM
+                        AdventureWorksDW2019.dbo.FactInternetSales AS FIS
+                        JOIN
+                        AdventureWorksDW2019.dbo.DimSalesTerritory AS DST
+                        ON
+                        FIS.SalesTerritoryKey = DST.SalesTerritoryKey
+                        JOIN
+                        AdventureWorksDW2019.dbo.DimGeography AS DG
+                        ON
+                        DST.SalesTerritoryKey = DG.SalesTerritoryKey
+                        GROUP BY
+                        DG.FrenchCountryRegionName
+                        ORDER BY SUM(FIS.SalesAmount) asc;''')
+    result=cursor.fetchall()
+    return Response(result)

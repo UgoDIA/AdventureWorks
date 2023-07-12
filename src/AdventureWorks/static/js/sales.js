@@ -10,7 +10,7 @@ $(document).ready(function () {
             const labels = datasetData.map(item => item[0])
             const data = datasetData.map(item => item[1]);
 
-            const ctx = document.getElementById('myChart');
+            const ctx = document.getElementById('salesChart');
             new Chart(ctx, {
                 type: 'bar',
                 data: {
