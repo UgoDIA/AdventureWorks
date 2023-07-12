@@ -36,6 +36,7 @@ def deptFinance(request):
                         ON
                         FF.DepartmentGroupKey = DDG.DepartmentGroupKey
                         GROUP BY
-                        DDG.DepartmentGroupName;''')
+                        DDG.DepartmentGroupName
+                        ORDER BY SUM(FF.Amount) asc;''')
     result=cursor.fetchall()
     return Response(result)
