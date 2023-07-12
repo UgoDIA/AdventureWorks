@@ -1,0 +1,31 @@
+.ui.table{
+    background: #444c54 !important;
+    color:white !important;
+}
+
+.ui.table > thead > tr > th {
+    background: #40474f !important;
+    color:white !important;
+}
+
+.ui.menu .item{
+    color: rgba(255, 255, 255, 0.87) !important;
+    
+}
+
+.ui.menu{
+    background: #40474f !important;
+}
+.ui.menu .item:hover{
+    background: rgba(255, 254, 254, 0.4) !important;
+}
+.ui.menu  .active.item{
+    background: rgba(255, 254, 254, 0.2) !important;
+}
+
+.info-btn{
+    border-radius: 100px;
+    font-size: 15px;
+    height: 40px;
+    width: 40px;
+}

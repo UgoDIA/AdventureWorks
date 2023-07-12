@@ -1,12 +1,125 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    test
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="{% static "css/all.min.css"%}">
+      <link rel="stylesheet" href="{% static "css/adminlte.min.css"%}">
+      <link rel="stylesheet" href="{% static "css/index.css"%}">
+      <link rel="stylesheet" href="{% static "css/semantic.min.css"%}">
+      <link rel="stylesheet" href="{% static "css/dataTables.semanticui.min.css"%}">
+      <script src="{% static "js/jquery.min.js"%}"></script>
+      <script src="{% static "js/jquery.dataTables.min.js"%}"></script>
+      <script src="{% static "js/dataTables.semanticui.min.js"%}"></script>
+      <script src="{% static "js/semantic.min.js"%}"></script>
+      <link rel="stylesheet" href="{% static "css/style.css"  %}" />
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2 "></script>
+      <title>AdventureWorks</title>
+   </head>
+   <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+
+      <!-- Preloader -->
+      <div class="preloader flex-column justify-content-center align-items-center">
+         <img class="animation__wobble" src="{% static "images/test.png"  %}" alt="AdminLTELogo" height="200" width="600">
+      </div>
+      <section class="content">
+         <div class="container">
+            <div class= "row justify-content-md-around">
+               <div class="col-auto align-self-center bg-white"><img src="{% static "images/test.png"  %}" alt="Logo Adv"  style="height: 60px;"></div>
+               <div class="col-auto align-self-center">
+                  <h1 class="display-3 mt-4 mb-4" >Adventure Works</h1>
+               </div>
+               <div class="col-auto align-self-center">
+                  <h1 class="display-3 mt-4 mb-4" ><a  href="https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms"  target="_blank" ><button type="button"class="btn btn-dark info-btn"><i class="fas fa-info"></i></button></a></h1>
+               </div>
+            </div>
+
+            
+            <!-- Chiffres d'affaires par années -->
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="card">
+                     <div class="card-header">
+                        <h5 class="card-title">Chiffres d'affaires par années</h5>
+                        <div class="card-tools">
+                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                           <i class="fas fa-minus"></i>
+                           </button>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <div class="row">
+                             <!-- graph ici -->
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>         
+                                            
+
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Financement par département -->
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="card">
+                     <div class="card-header">
+                        <h5 class="card-title">Financement par département</h5>
+                        <div class="card-tools">
+                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                           <i class="fas fa-minus"></i>
+                           </button>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <div class="row">
+                             <!-- graph ici -->
+
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Nombre d'employés par département -->
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="card">
+                     <div class="card-header">
+                        <h5 class="card-title">Nombre d'employés par département</h5>
+                        <div class="card-tools">
+                           <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                           <i class="fas fa-minus"></i>
+                           </button>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <div class="row">
+                             <!-- graph ici -->
+
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+
+         </div>
+      </section>
+
+      <script src="{%static "js/main.js" %}"></script>
+      <script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+      <script src="{% static "js/adminlte.js" %}"></script>
+      
+   </body>
 </html>
