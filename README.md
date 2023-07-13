@@ -1,5 +1,29 @@
 # AdventureWorks
 
+## Création d'un environnement virtuel
+
+```sh
+python -m venv ./venv
+```
+
+## Activation de l'environnement virtuel
+
+```sh
+venv\Scripts\activate.bat
+```
+
+## Installation des paquets
+
+```sh
+pip install -r requirements.txt
+```
+
+## Installation des paquets
+
+```sh
+python manage.py runserver
+```
+
 ## Rôles des bases de données
 
 - La base de données **AdventureWorks2019** sert aux opérations quotidiennes
