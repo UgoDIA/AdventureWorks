@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 8000
 
 # Définit les variables d'environnement
-ENV DJANGO_SETTINGS_MODULE=your_project.settings
+ENV DJANGO_SETTINGS_MODULE=AdventureWorks.settings
 
 # Exécute la commande pour démarrer l'application Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
