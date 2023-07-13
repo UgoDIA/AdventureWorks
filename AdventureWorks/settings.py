@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-krm+^=xp=mge#x23ro!0u%3d$nlt!3-u)9(9(!p6gx5f6vxbmc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','https://adventureworksboard.azurewebsites.net']
+
+CSRF_TRUSTED_ORIGINS = ["https://adventureworksboard.azurewebsites.net"]
 
 
 # Application definition
