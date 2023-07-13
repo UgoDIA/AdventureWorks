@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'AdventureWorksDW2019',
         'USER': 'sa',
-        'PASSWORD': DBPASS,
+        'PASSWORD': os.environ['DBPASS'],
         'HOST': '20.19.202.243',
         'PORT': '1433',
 
