@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','adventureworksboard.azurewebsites.net']
 
-CSRF_TRUSTED_ORIGINS = ["https://adventureworksboard.azurewebsites.net"]
+CSRF_TRUSTED_ORIGINS = ["adventureworksboard.azurewebsites.net"]
 
 
 # Application definition
