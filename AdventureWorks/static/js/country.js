@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     // Effectuer une requête à l'API pour obtenir les données
     $.ajax({
-        url: currentUrl+'/AdventureWorks/api/country/',
+        url: currentUrl+'/api/country/',
         method: 'GET',
         success: function (response) {
             // Récupérer les valeurs du dataset depuis la réponse de l'API

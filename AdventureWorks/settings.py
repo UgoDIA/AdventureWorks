@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from secret import DBPASS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,7 +87,7 @@ DATABASES = {
         'ENGINE': 'mssql',
         'NAME': 'AdventureWorksDW2019',
         'USER': 'sa',
-        'PASSWORD': 'Adventureworks1',
+        'PASSWORD': DBPASS,
         'HOST': '20.19.202.243',
         'PORT': '1433',
 

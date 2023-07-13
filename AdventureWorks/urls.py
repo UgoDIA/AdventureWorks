@@ -23,9 +23,9 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='AdventureWorks/dashboard/')),
-    path('AdventureWorks/dashboard/', views.dashboard),
-    path('AdventureWorks/api/',include('api.urls')),
+    path('', RedirectView.as_view(url='dashboard/')),
+    path('dashboard/', views.dashboard),
+    path('api/',include('api.urls')),
 
     
 ]

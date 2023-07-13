@@ -2,7 +2,7 @@ $(document).ready(function () {
   const currentUrl = window.location.origin;
 
   $.ajax({
-    url: currentUrl + "/AdventureWorks/api/sales/",
+    url: currentUrl + "/api/sales/",
     method: "GET",
     success: function (response) {
       const datasetData = response;

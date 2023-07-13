@@ -6,7 +6,7 @@ loader.style.display = "block";
 
 $(document).ready(function () {
   const currentUrl = window.location.origin;
-  const url = currentUrl + "/AdventureWorks/api/dept/";
+  const url = currentUrl + "/api/dept/";
 
   fetch(url)
     .then((response) => {
