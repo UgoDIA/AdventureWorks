@@ -83,3 +83,14 @@ def CACountry(request):
                         ORDER BY SUM(FIS.SalesAmount) asc;''')
     result=cursor.fetchall()
     return Response(result)
+
+@api_view(['GET'])
+def nvClient(request):
+    cursor=connection.cursor()
+    cursor.execute('''SELECT YEAR(DateFirstPurchase), COUNT(DateFirstPurchase) AS Total
+                        FROM AdventureWorksDW2019.dbo.DimCustomer
+                        GROUP BY YEAR(DateFirstPurchase)
+                        ORDER BY YEAR(DateFirstPurchase);''')
+    result=cursor.fetchall()
+    return Response(result)
+

@@ -9,5 +9,6 @@ urlpatterns = [
     path('sales/', views.sales),
     path('country/', views.country),
     path('CACountry/', views.CACountry),
+    path('nvClient/', views.nvClient),
 
 ]
