@@ -55,18 +55,11 @@ def sales(request):
 @api_view(['GET'])
 def country(request):
     cursor=connection.cursor()
-    cursor.execute('''SELECT
-                        DG.FrenchCountryRegionName,
-                        SUM(DC.CustomerKey) AS TotalAmount
-                        FROM
-                        AdventureWorksDW2019.dbo.DimCustomer AS DC
-                        JOIN
-                        AdventureWorksDW2019.dbo.DimGeography AS DG
-                        ON
-                        DC.GeographyKey = DG.GeographyKey
-                        GROUP BY
-                        DG.FrenchCountryRegionName
-                        order by SUM(DC.CustomerKey) asc ;''')
+    cursor.execute('''SELECT g.FrenchCountryRegionName AS Country, COUNT(c.CustomerKey) AS CustomerCount
+                        FROM AdventureWorksDW2019.dbo.DimCustomer c
+                        JOIN AdventureWorksDW2019.dbo.DimGeography g ON c.GeographyKey = g.GeographyKey
+                        GROUP BY g.FrenchCountryRegionName
+                        ORDER BY CustomerCount ASC;''')
     result=cursor.fetchall()
     return Response(result)
 
